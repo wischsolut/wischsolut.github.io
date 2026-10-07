@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>妖精sp官网 - 妖精SP系列作品介绍与官方信息指南</title>
+<meta name="description" content="妖精sp官网信息页，介绍妖精SP系列作品的基本概念、内容特色、观看与获取方式、常见问题与使用建议，帮助用户快速了解妖精SP相关内容。">
+<meta name="keywords" content="妖精sp官网,妖精SP,妖精SP系列,妖精SP作品,妖精SP介绍">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:#0d0a14;
+  color:#e8e2f0;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ===== 顶部导航 ===== */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,10,20,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(168,120,255,.18);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:66px;gap:18px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;letter-spacing:.5px}
+.logo-mark{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,#8a4dff,#ff6fd8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;color:#fff;font-weight:800;
+  box-shadow:0 0 18px rgba(138,77,255,.55);
+}
+.logo span.sub{font-size:12px;font-weight:400;color:#9c8fb8;letter-spacing:1px}
+.main-nav{display:flex;gap:6px}
+.main-nav a{
+  padding:8px 14px;border-radius:9px;font-size:14.5px;color:#c6bcdb;
+  transition:.22s;white-space:nowrap;
+}
+.main-nav a:hover{background:rgba(138,77,255,.16);color:#fff}
+.nav-cta{
+  padding:9px 18px;border-radius:10px;font-size:14px;font-weight:600;
+  background:linear-gradient(135deg,#8a4dff,#ff6fd8);color:#fff;
+  box-shadow:0 4px 16px rgba(138,77,255,.35);transition:.22s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,111,216,.4)}
+.menu-btn{display:none;background:none;border:none;color:#e8e2f0;font-size:24px;cursor:pointer}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  padding:74px 0 66px;
+  background:
+    radial-gradient(900px 420px at 12% -10%,rgba(138,77,255,.30),transparent 62%),
+    radial-gradient(760px 380px at 92% 8%,rgba(255,111,216,.22),transparent 60%),
+    linear-gradient(180deg,#120d1e,#0d0a14);
+  border-bottom:1px solid rgba(168,120,255,.14);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:26px 26px;pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 15px;border-radius:999px;font-size:13px;
+  background:rgba(138,77,255,.16);border:1px solid rgba(168,120,255,.35);
+  color:#d9c8ff;margin-bottom:20px;
+}
+.tagline i{width:7px;height:7px;border-radius:50%;background:#ff6fd8;display:block;box-shadow:0 0 10px #ff6fd8}
+.hero h1{
+  font-size:42px;line-height:1.28;font-weight:800;letter-spacing:.5px;
+  margin-bottom:18px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg,#a878ff,#ff8fe0);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:16.5px;color:#b9aed2;max-width:620px;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:11px;font-size:15px;font-weight:600;
+  transition:.24s;cursor:pointer;border:none;
+}
+.btn-primary{background:linear-gradient(135deg,#8a4dff,#ff6fd8);color:#fff;box-shadow:0 6px 20px rgba(138,77,255,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,111,216,.45)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#ddd3f2;border:1px solid rgba(168,120,255,.32)}
+.btn-ghost:hover{background:rgba(138,77,255,.18);color:#fff}
+.hero-facts{display:flex;flex-wrap:wrap;gap:26px}
+.hero-facts div{font-size:13.5px;color:#9c8fb8}
+.hero-facts strong{display:block;font-size:20px;color:#e8e2f0;font-weight:700;margin-bottom:2px}
+
+/* 首屏右侧信息卡 */
+.hero-card{
+  background:linear-gradient(160deg,rgba(38,26,62,.95),rgba(20,14,32,.95));
+  border:1px solid rgba(168,120,255,.28);
+  border-radius:20px;padding:26px;
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+}
+.hero-card h3{font-size:16px;margin-bottom:16px;color:#d9c8ff;font-weight:700;letter-spacing:.5px}
+.hero-card ul{list-style:none}
+.hero-card li{
+  display:flex;gap:12px;padding:11px 0;
+  border-bottom:1px dashed rgba(168,120,255,.16);font-size:14px;color:#b9aed2;
+}
+.hero-card li:last-child{border-bottom:none}
+.hero-card li b{color:#ff8fe0;font-weight:600;flex-shrink:0}
+
+/* ===== 通用区块 ===== */
+section{padding:64px 0}
+.section-head{margin-bottom:34px;max-width:760px}
+.section-head .kicker{
+  font-size:13px;letter-spacing:2px;color:#a878ff;font-weight:600;
+  text-transform:uppercase;margin-bottom:10px;display:block;
+}
+.section-head h2{font-size:29px;font-weight:800;line-height:1.35;margin-bottom:12px}
+.section-head p{color:#a99ec2;font-size:15.5px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(168,120,255,.3),transparent)}
+
+/* ===== 内容特色卡片 ===== */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:22px}
+.feature-card{
+  background:linear-gradient(165deg,rgba(32,23,52,.9),rgba(18,13,29,.9));
+  border:1px solid rgba(168,120,255,.18);
+  border-radius:16px;padding:26px 24px;transition:.26s;
+}
+.feature-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,111,216,.45);
+  box-shadow:0 18px 40px rgba(138,77,255,.22);
+}
+.feature-icon{
+  width:46px;height:46px;border-radius:13px;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;font-size:21px;
+  background:linear-gradient(135deg,rgba(138,77,255,.3),rgba(255,111,216,.24));
+  border:1px solid rgba(168,120,255,.3);
+}
+.feature-card h3{font-size:17.5px;margin-bottom:9px;font-weight:700}
+.feature-card p{font-size:14.5px;color:#a99ec2}
+
+/* ===== 内容板块（含侧栏） ===== */
+.content-layout{display:grid;grid-template-columns:1fr 320px;gap:38px;align-items:start}
+.article-block{
+  background:rgba(24,17,39,.72);
+  border:1px solid rgba(168,120,255,.16);
+  border-radius:16px;padding:30px 28px;margin-bottom:22px;
+}
+.article-block h3{font-size:19px;margin-bottom:14px;font-weight:700;color:#efe8ff}
+.article-block h3::before{
+  content:"";display:inline-block;width:4px;height:17px;border-radius:2px;
+  background:linear-gradient(180deg,#a878ff,#ff6fd8);
+  margin-right:10px;vertical-align:-2px;
+}
+.article-block p{font-size:15px;color:#b3a8cc;margin-bottom:12px}
+.article-block p:last-child{margin-bottom:0}
+.article-block ul{margin:8px 0 0 4px;list-style:none}
+.article-block ul li{
+  position:relative;padding-left:20px;font-size:14.8px;color:#b3a8cc;margin-bottom:9px;
+}
+.article-block ul li::before{
+  content:"";position:absolute;left:2px;top:10px;
+  width:6px;height:6px;border-radius:50%;
+  background:#a878ff;box-shadow:0 0 8px rgba(168,120,255,.8);
+}
+
+/* 侧栏 */
+.side-panel{
+  background:linear-gradient(170deg,rgba(34,24,55,.92),rgba(18,13,29,.92));
+  border:1px solid rgba(168,120,255,.2);
+  border-radius:16px;padding:24px;margin-bottom:20px;
+}
+.side-panel h4{
+  font-size:15.5px;font-weight:700;margin-bottom:16px;color:#e3d9ff;
+  padding-bottom:12px;border-bottom:1px solid rgba(168,120,255,.16);
+}
+.side-list{list-style:none}
+.side-list li{
+  display:flex;gap:11px;align-items:flex-start;
+  padding:10px 0;font-size:14px;color:#a99ec2;
+  border-bottom:1px dashed rgba(168,120,255,.13);
+}
+.side-list li:last-child{border-bottom:none;padding-bottom:0}
+.side-list li span.num{
+  flex-shrink:0;width:22px;height:22px;border-radius:7px;font-size:12px;
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+  background:rgba(138,77,255,.22);color:#c9b3ff;
+}
+.side-list li span.num.top{background:linear-gradient(135deg,#8a4dff,#ff6fd8);color:#fff}
+
+/* ===== 观看/获取指引步骤 ===== */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.step{
+  position:relative;padding:26px 22px;
+  background:rgba(22,16,36,.8);
+  border:1px solid rgba(168,120,255,.18);
+  border-radius:15px;
+}
+.step .step-no{
+  font-size:34px;font-weight:800;line-height:1;
+  background:linear-gradient(135deg,#8a4dff,#ff6fd8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:12px;display:block;
+}
+.step h3{font-size:16.5px;margin-bottom:8px;font-weight:700}
+.step p{font-size:14px;color:#a99ec2}
+
+/* ===== 常见问题 ===== */
+.faq-list{display:grid;gap:12px;max-width:900px}
+.faq-item{
+  background:rgba(24,17,39,.75);
+  border:1px solid rgba(168,120,255,.16);
+  border-radius:13px;overflow:hidden;transition:.24s;
+}
+.faq-item[open]{border-color:rgba(255,111,216,.4);background:rgba(32,22,52,.85)}
+.faq-item summary{
+  list-style:none;cursor:pointer;padding:18px 22px;
+  font-size:15.5px;font-weight:600;color:#e6dcff;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"+";font-size:20px;font-weight:400;color:#a878ff;
+  flex-shrink:0;transition:.24s;
+}
+.faq-item[open] summary::after{content:"−";color:#ff6fd8}
+.faq-item .faq-body{padding:0 22px 20px;font-size:14.6px;color:#a99ec2}
+
+/* ===== 提示条 ===== */
+.notice{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:20px 22px;border-radius:14px;
+  background:linear-gradient(120deg,rgba(138,77,255,.14),rgba(255,111,216,.09));
+  border:1px solid rgba(168,120,255,.3);
+  font-size:14.5px;color:#c3b7de;
+}
+.notice .ico{
+  flex-shrink:0;width:30px;height:30px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  background:rgba(138,77,255,.28);color:#e0d1ff;
+}
+
+/* ===== 页脚 ===== */
+.site-footer{
+  background:#08060e;
+  border-top:1px solid rgba(168,120,255,.16);
+  padding:52px 0 26px;
+  margin-top:20px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;
+  padding-bottom:34px;border-bottom:1px solid rgba(168,120,255,.12);
+}
+.footer-brand p{font-size:14px;color:#8e83a8;margin-top:14px;max-width:320px}
+.footer-col h5{font-size:14.5px;font-weight:700;color:#d8cdf2;margin-bottom:15px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:9px}
+.footer-col a{font-size:14px;color:#8e83a8;transition:.2s}
+.footer-col a:hover{color:#c9b3ff}
+.footer-bottom{
+  padding-top:22px;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;font-size:13px;color:#6f6689;
+}
+
+/* ===== 响应式 ===== */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:34px}
+  .content-layout{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .main-nav{display:none}
+  .main-nav.open{
+    display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;
+    background:#120d1e;padding:14px 20px 20px;gap:4px;
+    border-bottom:1px solid rgba(168,120,255,.2);
+  }
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+  .hero{padding:52px 0 48px}
+  .hero h1{font-size:30px}
+  .hero p.lead{font-size:15.5px}
+  section{padding:48px 0}
+  .section-head h2{font-size:23px}
+  .hero-facts{gap:18px}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  .btn{width:100%;justify-content:center}
+  .article-block{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">妖</span>
+      <span>妖精SP<span class="sub">官网信息页</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#intro">概念介绍</a>
+      <a href="#features">内容特色</a>
+      <a href="#guide">获取指引</a>
+      <a href="#faq">常见问题</a>
+      <a href="#notice">注意事项</a>
+    </nav>
+    <a href="#intro" class="nav-cta">开始了解</a>
+    <button class="menu-btn" id="menuBtn" aria-label="展开菜单">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="tagline"><i></i>妖精SP 系列内容信息汇总</span>
+        <h1>妖精SP官网：<em>妖精SP</em>系列作品介绍与信息指引</h1>
+        <p class="lead">
+          妖精SP 是一个在二次元爱好者圈子中被频繁提及的名称。本页面围绕“妖精SP”这一关键词，
+          梳理其基本概念、常见的内容形态、搜索时容易混淆的地方，以及查找相关资料时可以参考的方法，
+          帮助你更清楚地判断自己需要的是什么。
+        </p>
+        <div class="hero-actions">
+          <a href="#intro" class="btn btn-primary">了解基本概念</a>
+          <a href="#faq" class="btn btn-ghost">查看常见问题</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>概念</strong>名称与范围说明</div>
+          <div><strong>内容</strong>常见形态梳理</div>
+          <div><strong>方法</strong>查找与辨别建议</div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>本页可以帮你解决</h3>
+        <ul>
+          <li><b>是什么</b><span>妖精SP 名称的常见指向与语境</span></li>
+          <li><b>看什么</b><span>系列内容一般包含哪些组成部分</span></li>
+          <li><b>怎么找</b><span>搜索时如何提高信息命中率</span></li>
+          <li><b>注意啥</b><span>辨别来源可靠性的几个要点</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 概念介绍 -->
+  <section id="intro">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Concept</span>
+        <h2>妖精SP 是什么：先理清名称与范围</h2>
+        <p>
+          在搜索“妖精sp官网”时，不同用户想找的东西往往并不一样。有人是想了解某个作品的背景设定，
+          有人是想确认是否有官方渠道，也有人只是看到了片段想找到完整出处。先把名称的常见用法理清楚，
+          后续查找会顺畅很多。
+        </p>
+      </div>
+
+      <div class="content-layout">
+        <div class="article-col">
+          <article class="article-block">
+            <h3>名称的常见语境</h3>
+            <p>
+              “妖精SP”通常出现在二次元内容讨论中，其中“SP”在娱乐与内容行业里常被用作“特别篇”“特别企划”
+              或“特别版本”的缩写，也常被用于区分正篇之外的附加内容。因此，这个词在不同语境下可能指向
+              不同的具体对象，需要结合你看到的画面、标题或发布来源来判断。
+            </p>
+            <p>
+              由于网络传播中名称常被简写、拼接或转述，同一个词可能对应多个不同的内容主体。这也是为什么
+              直接搜索时，结果会显得比较杂乱——它并不一定是同一个东西的多个页面，而可能是多个不同对象
+              共用了相似的名字。
+            </p>
+          </article>
+
+          <article class="article-block">
+            <h3>为什么“官网”这个词要特别留意</h3>
+            <p>
+              很多内容并没有一个真正意义上的独立官方网站，而是依托于平台页面、创作者主页或发行方的
+              品牌站点进行展示。因此在查找时，与其执着于“官网”两个字，不如把注意力放在“信息来源是否
+              明确、是否可追溯、是否与内容主体直接相关”上。
+            </p>
+            <ul>
+              <li>优先看发布来源是否清晰，是否有明确的主体标识</li>
+              <li>注意页面是否只堆砌关键词而缺少实质内容</li>
+              <li>对要求额外操作才能查看内容的页面保持谨慎</li>
+              <li>多方交叉比对，避免只依赖单一来源下结论</li>
+            </ul>
+          </article>
+
+          <article class="article-block">
+            <h3>本页的定位</h3>
+            <p>
+              本页面是一份围绕“妖精SP”关键词整理的信息说明页，目的是帮助搜索者理解这个词可能指代什么、
+              内容通常包含哪些部分、以及查找时应该注意什么。它不提供也不引导任何具体资源的获取方式，
+              所有判断仍需你结合自身情况自行完成。
+            </p>
+          </article>
+        </div>
+
+        <aside class="side-col">
+          <div class="side-panel">
+            <h4>搜索时的高频困惑</h4>
+            <ul class="side-list">
+              <li><span class="num top">1</span><span>名称太短，搜索结果容易混杂</span></li>
+              <li><span class="num top">2</span><span>同一个词可能对应多个不同对象</span></li>
+              <li><span class="num">3</span><span>“官网”未必真实存在独立站点</span></li>
+              <li><span class="num">4</span><span>转述内容容易丢失原始信息</span></li>
+              <li><span class="num">5</span><span>片段化传播导致出处难确认</span></li>
+            </ul>
+          </div>
+          <div class="side-panel">
+            <h4>建议的检索顺序</h4>
+            <ul class="side-list">
+              <li><span class="num">1</span><span>先补充限定词缩小范围</span></li>
+              <li><span class="num">2</span><span>确认内容形态（图文/动画/其他）</span></li>
+              <li><span class="num">3</span><span>寻找原始发布方或作者信息</span></li>
+              <li><span class="num">4</span><span>交叉验证多个来源的说法</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- 内容特色 -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Features</span>
+        <h2>妖精SP 类内容通常包含哪些部分</h2>
+        <p>
+          虽然具体对象各有差异，但二次元方向的“特别篇”类内容在结构上有一些共通之处。
+          了解这些组成部分，有助于你判断自己看到的片段属于哪一类。
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3>正篇之外的特别内容</h3>
+          <p>特别篇通常依附于某个已有作品或角色体系，篇幅相对独立，用于补充设定、延展剧情或作为阶段性企划呈现。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>视觉风格鲜明</h3>
+          <p>这类内容往往在画风、配色或角色设计上有较突出的辨识度，也正因如此，片段容易在社交平台上被单独传播。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>设定与背景说明</h3>
+          <p>部分内容会附带世界观、角色关系或创作背景的介绍，这类文字信息往往是判断出处的重要线索。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧩</div>
+          <h3>系列化与多版本</h3>
+          <p>同一主题可能衍生出多个版本或续作，名称相近但内容不同，查找时需要留意编号、副标题等区分信息。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>社区讨论密集</h3>
+          <p>相关讨论多集中在兴趣社区与社交平台，信息更新快但也容易失真，需要结合多个讨论交叉判断。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>关键词辨识度有限</h3>
+          <p>名称较短时，搜索引擎容易混入无关结果，这也是很多人觉得“查不到准确信息”的主要原因之一。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- 获取指引 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Guide</span>
+        <h2>查找妖精SP相关信息的一般步骤</h2>
+        <p>
+          下面这几个步骤不针对任何特定平台，只是通用的信息检索思路，适用于大多数“名称模糊、来源不清”的搜索场景。
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-no">01</span>
+          <h3>补充限定词</h3>
+          <p>在关键词后加上内容形态、年份、角色名或平台类型等限定词，能显著减少无关结果的干扰。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">02</span>
+          <h3>确认内容形态</h3>
+          <p>先判断你看到的是插画、动画、文字还是其他形式，不同形态对应的查找渠道和信息源差别很大。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">03</span>
+          <h3>回溯原始出处</h3>
+          <p>尽量找到最早发布该内容的账号或页面，转述链条越长，信息失真的可能性越高。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">04</span>
+          <h3>交叉验证</h3>
+          <p>用两个以上独立来源比对同一说法，如果只有单一来源且无法追溯，建议保持保留态度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- 常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于妖精SP的常见问题</h2>
+        <p>以下问题来自搜索“妖精sp官网”时比较典型的疑问，回答尽量保持客观，不做超出确认范围的推断。</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>妖精SP 有没有一个统一的官方网站？</summary>
+          <div class="faq-body">
+            目前无法确认存在一个被普遍认可的、统一指向“妖精SP”的独立官方网站。这类名称在网络上
+            可能对应多个不同主体，建议以你实际看到的内容来源为准，而不是默认存在唯一官网。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>为什么搜索这个关键词，结果看起来很杂？</summary>
+          <div class="faq-body">
+            主要是因为关键词本身较短，且“SP”在多个领域都有使用，容易与游戏、活动、商品等无关内容
+            产生重叠。加上网络传播中名称常被简写，进一步增加了检索的噪音。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>看到片段但找不到完整出处，怎么办？</summary>
+          <div class="faq-body">
+            可以先记录片段中的显著特征，比如角色外观、场景元素、画面风格或文字内容，再用这些特征
+            作为补充关键词进行检索。同时可以在相关兴趣社区提问，通常比直接搜索名称更有效。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>如何判断一个页面是否值得参考？</summary>
+          <div class="faq-body">
+            重点关注三点：页面是否有明确的发布主体、内容是否有实质信息而非单纯堆砌关键词、
+            是否要求你进行与查看内容无关的额外操作。满足前两点、不涉及第三点的页面，参考价值通常更高。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>本页面会提供具体资源链接吗？</summary>
+          <div class="faq-body">
+            不会。本页面定位为信息说明与检索思路整理，不提供、不推荐也不引导任何具体资源的获取方式。
+            所有内容判断请结合自身情况，并遵守所在地的相关法律法规。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注意事项 -->
+  <section id="notice">
+    <div class="wrap">
+      <div class="notice">
+        <div class="ico">!</div>
+        <div>
+          <strong>温馨提示：</strong>网络信息良莠不齐，名称相似的内容尤其容易混淆。浏览时请注意辨别信息来源，
+          不轻信来源不明的说法，不随意在陌生页面填写个人信息或进行额外操作。如涉及版权内容，
+          请通过正规渠道了解与支持。
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">妖</span>
+          <span>妖精SP<span class="sub">官网信息页</span></span>
+        </div>
+        <p>围绕“妖精SP”关键词整理的概念说明、内容结构梳理与信息检索指引，帮助搜索者更清晰地理解相关内容。</p>
+      </div>
+      <div class="footer-col">
+        <h5>页面导航</h5>
+        <ul>
+          <li><a href="#intro">概念介绍</a></li>
+          <li><a href="#features">内容特色</a></li>
+          <li><a href="#guide">获取指引</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>相关主题</h5>
+        <ul>
+          <li><a href="#intro">名称与范围</a></li>
+          <li><a href="#features">特别篇内容</a></li>
+          <li><a href="#guide">检索方法</a></li>
+          <li><a href="#notice">浏览提示</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>使用说明</h5>
+        <ul>
+          <li><a href="#faq">信息免责说明</a></li>
+          <li><a href="#notice">来源辨别建议</a></li>
+          <li><a href="#guide">交叉验证方法</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页面为信息说明类页面，内容仅供参考。</span>
+      <span>妖精SP 相关内容请以官方或正规渠道信息为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+            </html>
