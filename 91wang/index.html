@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91网 - 综合网络资源导航与使用指南</title>
+<meta name="description" content="91网是一个综合网络资源导航平台，提供分类目录、热门站点推荐、资源检索方法和安全上网指南，帮助用户快速找到所需内容并了解网络导航站的使用方式。">
+<meta name="keywords" content="91网,资源导航,网站目录,网络资源,导航平台,上网指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1a5c9e;
+  --primary-dark: #12457a;
+  --primary-light: #e8f1fa;
+  --accent: #e85d2a;
+  --accent-light: #fef0ea;
+  --text-main: #1f2933;
+  --text-sub: #52606d;
+  --text-muted: #9aa5b1;
+  --bg-page: #f5f7fa;
+  --bg-card: #ffffff;
+  --border: #e0e6ed;
+  --radius: 10px;
+  --shadow-sm: 0 1px 3px rgba(31,41,51,0.06);
+  --shadow-md: 0 4px 16px rgba(31,41,51,0.08);
+  --shadow-lg: 0 8px 28px rgba(31,41,51,0.12);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== 顶部栏 ===== */
+.topbar {
+  background: var(--primary-dark);
+  color: #c8d8ea;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 16px;
+}
+
+.topbar-links a {
+  color: #c8d8ea;
+}
+
+.topbar-links a:hover {
+  color: #fff;
+}
+
+/* ===== 页眉 ===== */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text strong {
+  font-size: 20px;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.logo-text span {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 460px;
+  display: flex;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text-main);
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0 22px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.search-box button:hover {
+  background: var(--accent);
+}
+
+/* ===== 导航 ===== */
+.main-nav {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 0;
+}
+
+.nav-list li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text-sub);
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* ===== 首屏 ===== */
+.hero {
+  background: linear-gradient(135deg, #1a5c9e 0%, #12457a 60%, #0d3560 100%);
+  color: #fff;
+  padding: 56px 0 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #c8d8ea;
+  line-height: 1.8;
+  margin-bottom: 26px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-tags a {
+  display: inline-block;
+  padding: 7px 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.hero-tags a:hover {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ===== 主体布局 ===== */
+.main-wrap {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  padding: 36px 0 48px;
+}
+
+/* ===== 通用区块 ===== */
+.section {
+  margin-bottom: 36px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.section-head h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-head h2::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-head .more {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.section-head .more:hover {
+  color: var(--primary);
+}
+
+/* ===== 卡片网格 ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all 0.25s;
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #c5d5e8;
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.card p {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.card-tags span {
+  font-size: 12px;
+  padding: 2px 10px;
+  background: var(--bg-page);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+/* ===== 列表 ===== */
+.list-plain {
+  list-style: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.list-plain li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.list-plain li:last-child {
+  border-bottom: none;
+}
+
+.list-plain li:hover {
+  background: var(--primary-light);
+}
+
+.list-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--bg-page);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-plain li:nth-child(1) .list-num { background: #e85d2a; color: #fff; }
+.list-plain li:nth-child(2) .list-num { background: #f08c4a; color: #fff; }
+.list-plain li:nth-child(3) .list-num { background: #f5b57a; color: #fff; }
+
+.list-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-body strong {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.list-body small {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-badge {
+  flex-shrink: 0;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== 侧边栏 ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.widget h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.widget-list {
+  list-style: none;
+}
+
+.widget-list li {
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+}
+
+.widget-list li:last-child {
+  border-bottom: none;
+}
+
+.widget-list li a {
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.widget-list li a:hover {
+  color: var(--primary);
+}
+
+.widget-list li a span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.notice-box {
+  background: var(--accent-light);
+  border: 1px solid #fad5c2;
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: #8a3a12;
+  line-height: 1.75;
+}
+
+.notice-box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+/* ===== 指南区块 ===== */
+.guide-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-section > p {
+  font-size: 14.5px;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.step {
+  text-align: center;
+  padding: 20px 14px;
+  background: var(--bg-page);
+  border-radius: var(--radius);
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.65;
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.faq-q:hover {
+  background: var(--primary-light);
+}
+
+.faq-q::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-a-inner {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+
+.faq-item.open .faq-a {
+  max-height: 400px;
+}
+
+/* ===== 页脚 ===== */
+.site-footer {
+  background: #1f2933;
+  color: #9aa5b1;
+  padding: 40px 0 24px;
+  font-size: 13.5px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.footer-brand strong {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 9px;
+}
+
+.footer-col ul li a {
+  color: #9aa5b1;
+  font-size: 13px;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #323f4b;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12.5px;
+  color: #7b8794;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 960px) {
+  .main-wrap {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .guide-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .search-box {
+    max-width: 100%;
+    order: 3;
+    width: 100%;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 36px 0 32px;
+  }
+  .hero h1 {
+    font-size: 22px;
+  }
+  .hero p {
+    font-size: 14.5px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .section-head h2 {
+    font-size: 17px;
+  }
+  .guide-section {
+    padding: 20px;
+  }
+  .topbar-inner {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部信息栏 -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>综合网络资源导航 · 分类目录 · 使用指南</span>
+    <div class="topbar-links">
+      <a href="#guide">使用帮助</a>
+      <a href="#faq">常见问题</a>
+      <a href="#safety">安全提示</a>
+    </div>
+  </div>
+</div>
+
+<!-- 页眉 -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-mark">91</div>
+      <div class="logo-text">
+        <strong>91网</strong>
+        <span>资源导航平台</span>
+      </div>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="搜索网站、分类或资源关键词…" aria-label="站内搜索">
+      <button type="button">搜索</button>
+    </div>
+  </div>
+</header>
+
+<!-- 主导航 -->
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-list">
+      <li><a href="#" class="active">首页</a></li>
+      <li><a href="#categories">资源分类</a></li>
+      <li><a href="#hot">热门推荐</a></li>
+      <li><a href="#guide">使用指南</a></li>
+      <li><a href="#safety">安全中心</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>91网 - 综合网络资源导航与使用指南</h1>
+    <p>91网是一个面向中文用户的综合网络资源导航平台，通过分类目录、热门推荐和检索工具，帮助用户更高效地发现和整理互联网上的常用站点与信息入口。本页同时提供导航站的使用方法、安全注意事项和常见问题解答。</p>
+    <div class="hero-tags">
+      <a href="#categories">网站分类目录</a>
+      <a href="#hot">热门站点排行</a>
+      <a href="#guide">新手使用指南</a>
+      <a href="#safety">安全上网提示</a>
+    </div>
+  </div>
+</section>
+
+<!-- 主体 -->
+<div class="container main-wrap">
+
+  <!-- 左栏 -->
+  <main>
+
+    <!-- 资源分类 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>资源分类目录</h2>
+        <a href="#" class="more">查看全部分类 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">📰</div>
+          <h3>资讯与媒体</h3>
+          <p>聚合新闻门户、行业资讯、科技媒体和本地信息类站点，方便按主题快速定位信息来源。</p>
+          <div class="card-tags"><span>新闻</span><span>科技</span><span>财经</span></div>
+        </article>
+        <article class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>工具与应用</h3>
+          <p>收录在线工具、效率软件、格式转换和开发辅助类网站，覆盖日常办公与学习场景。</p>
+          <div class="card-tags"><span>在线工具</span><span>效率</span><span>开发</span></div>
+        </article>
+        <article class="card">
+          <div class="card-icon">📚</div>
+          <h3>学习与知识</h3>
+          <p>整理公开课、文档库、百科词条和技术社区，适合系统性查找学习资料与参考内容。</p>
+          <div class="card-tags"><span>公开课</span><span>文档</span><span>百科</span></div>
+        </article>
+        <article class="card">
+          <div class="card-icon">🎬</div>
+          <h3>影音与娱乐</h3>
+          <p>汇总视频、音乐、播客和图文创作平台入口，便于按内容类型浏览和筛选。</p>
+          <div class="card-tags"><span>视频</span><span>音乐</span><span>播客</span></div>
+        </article>
+        <article class="card">
+          <div class="card-icon">🛒</div>
+          <h3>生活与服务</h3>
+          <p>涵盖购物、出行、健康、政务等生活服务类站点，提供常用入口的集中索引。</p>
+          <div class="card-tags"><span>购物</span><span>出行</span><span>政务</span></div>
+        </article>
+        <article class="card">
+          <div class="card-icon">💬</div>
+          <h3>社区与论坛</h3>
+          <p>收录兴趣社区、问答平台和垂直论坛，帮助用户找到讨论氛围合适的交流场所。</p>
+          <div class="card-tags"><span>问答</span><span>论坛</span><span>兴趣</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="section" id="hot">
+      <div class="section-head">
+        <h2>热门站点推荐</h2>
+        <a href="#" class="more">更多推荐 →</a>
+      </div>
+      <ul class="list-plain">
+        <li>
+          <span class="list-num">1</span>
+          <div class="list-body">
+            <strong>综合信息门户</strong>
+            <small>覆盖新闻、财经、体育等多频道内容，适合快速浏览当日要闻。</small>
+          </div>
+          <span class="list-badge">高频</span>
+        </li>
+        <li>
+          <span class="list-num">2</span>
+          <div class="list-body">
+            <strong>在线工具集合</strong>
+            <small>提供文档转换、图片处理、编码解码等常用功能，无需安装即可使用。</small>
+          </div>
+          <span class="list-badge">实用</span>
+        </li>
+        <li>
+          <span class="list-num">3</span>
+          <div class="list-body">
+            <strong>技术问答社区</strong>
+            <small>面向开发者的提问与经验分享平台，适合查找技术方案和排查思路。</small>
+          </div>
+          <span class="list-badge">专业</span>
+        </li>
+        <li>
+          <span class="list-num">4</span>
+          <div class="list-body">
+            <strong>知识百科词条</strong>
+            <small>结构化的概念解释与背景资料，适合快速了解陌生领域的基础信息。</small>
+          </div>
+          <span class="list-badge">参考</span>
+        </li>
+        <li>
+          <span class="list-num">5</span>
+          <div class="list-body">
+            <strong>影音内容平台</strong>
+            <small>汇集视频、音频类内容入口，支持按类别和热度进行浏览。</small>
+          </div>
+          <span class="list-badge">娱乐</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 使用指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>91网使用指南</h2>
+      </div>
+      <div class="guide-section">
+        <p>导航站的核心价值在于减少重复搜索、集中管理常用入口。使用91网时，建议先明确自己的需求类型，再通过分类或搜索定位目标站点，避免在海量链接中盲目浏览。以下三个步骤可以帮助新用户快速上手。</p>
+        <div class="guide-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h4>按分类定位</h4>
+            <p>根据需求选择资讯、工具、学习、影音等一级分类，缩小查找范围，提高检索效率。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h4>用搜索筛选</h4>
+            <p>在顶部搜索框输入关键词，结合站点简介判断是否符合需求，优先选择描述清晰的条目。</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h4>收藏与整理</h4>
+            <p>将常用站点加入浏览器书签并分组管理，逐步建立符合个人习惯的资源入口体系。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 安全提示 -->
+    <section class="section" id="safety">
+      <div class="section-head">
+        <h2>安全上网提示</h2>
+      </div>
+      <div class="guide-section">
+        <p>导航站只提供链接索引，不控制第三方站点的内容与服务。访问任何外部网站时，都应注意保护个人信息和设备安全。以下建议适用于大多数网络浏览场景。</p>
+        <ul class="list-plain">
+          <li>
+            <span class="list-num">✓</span>
+            <div class="list-body">
+              <strong>核实站点来源</strong>
+              <small>访问陌生站点前，确认域名拼写正确，避免进入仿冒或钓鱼页面。</small>
+            </div>
+          </li>
+          <li>
+            <span class="list-num">✓</span>
+            <div class="list-body">
+              <strong>谨慎提交个人信息</strong>
+              <small>非必要情况下，不要在来源不明的网站填写身份证号、银行卡号等敏感信息。</small>
+            </div>
+          </li>
+          <li>
+            <span class="list-num">✓</span>
+            <div class="list-body">
+              <strong>注意下载文件类型</strong>
+              <small>对可执行文件和压缩包保持警惕，下载后先进行安全扫描再打开。</small>
+            </div>
+          </li>
+          <li>
+            <span class="list-num">✓</span>
+            <div class="list-body">
+              <strong>保持浏览器更新</strong>
+              <small>及时更新浏览器和操作系统，以获得最新的安全补丁和防护能力。</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常见问题解答</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">91网是什么类型的网站？</button>
+          <div class="faq-a">
+            <div class="faq-a-inner">91网是一个综合网络资源导航平台，主要功能是对互联网上的常用站点进行分类整理和索引展示，帮助用户更高效地找到所需的信息入口。它本身不生产内容，而是提供链接聚合与导航服务。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">如何快速找到自己需要的资源？</button>
+          <div class="faq-a">
+            <div class="faq-a-inner">建议优先使用顶部搜索框输入关键词，或从资源分类目录中选择对应的一级分类。如果目标不明确，可以先浏览热门推荐列表，再结合站点简介进行判断。合理使用浏览器书签分组，也能显著提升日常查找效率。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">导航站收录的链接是否都安全？</button>
+          <div class="faq-a">
+            <div class="faq-a-inner">导航站通常只做链接整理，无法对第三方站点的实时内容和安全性作出完全保证。用户在访问外部网站时，应自行核实站点来源，避免提交敏感个人信息，并对下载文件保持必要的安全警惕。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">能否推荐自己的网站加入导航？</button>
+          <div class="faq-a">
+            <div class="faq-a-inner">多数导航站提供站点提交入口，通常会审核网站的内容质量、访问稳定性和合规性。具体收录标准和流程请以站方公布的信息为准，提交后需耐心等待审核结果。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">使用导航站需要注册账号吗？</button>
+          <div class="faq-a">
+            <div class="faq-a-inner">浏览和检索通常无需注册即可使用。部分导航站可能提供收藏、自定义主页等个性化功能，这类功能一般需要注册账号。具体以实际站点的功能设置为准。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+
+    <div class="widget">
+      <h3>本周热搜词</h3>
+      <ul class="widget-list">
+        <li><a href="#">在线工具 <span>↑</span></a></li>
+        <li><a href="#">文档转换 <span>↑</span></a></li>
+        <li><a href="#">技术社区 <span>→</span></a></li>
+        <li><a href="#">公开课资源 <span>↑</span></a></li>
+        <li><a href="#">图片处理 <span>→</span></a></li>
+        <li><a href="#">效率软件 <span>↓</span></a></li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h3>分类快捷入口</h3>
+      <ul class="widget-list">
+        <li><a href="#categories">资讯与媒体 <span>›</span></a></li>
+        <li><a href="#categories">工具与应用 <span>›</span></a></li>
+        <li><a href="#categories">学习与知识 <span>›</span></a></li>
+        <li><a href="#categories">影音与娱乐 <span>›</span></a></li>
+        <li><a href="#categories">生活与服务 <span>›</span></a></li>
+        <li><a href="#categories">社区与论坛 <span>›</span></a></li>
+      </ul>
+    </div>
+
+    <div class="notice-box">
+      <strong>安全提示</strong>
+      导航站仅提供链接索引，不对第三方站点内容负责。请勿在陌生网站提交身份证号、银行卡号等敏感信息，下载文件前建议先进行安全扫描。
+    </div>
+
+    <div class="widget">
+      <h3>使用小贴士</h3>
+      <ul class="widget-list">
+        <li><a href="#guide">用关键词精准搜索 <span>›</span></a></li>
+        <li><a href="#guide">按分类逐步缩小范围 <span>›</span></a></li>
+        <li><a href="#safety">核实域名避免仿冒 <span>›</span></a></li>
+        <li><a href="#faq">查看常见问题解答 <span>›</span></a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>91网</strong>
+        <p>综合网络资源导航平台，提供分类目录、热门站点推荐与上网安全指南，帮助用户更高效地发现和整理互联网信息入口。</p>
+      </div>
+      <div class="footer-col">
+        <h4>资源分类</h4>
+        <ul>
+          <li><a href="#categories">资讯与媒体</a></li>
+          <li><a href="#categories">工具与应用</a></li>
+          <li><a href="#categories">学习与知识</a></li>
+          <li><a href="#categories">影音与娱乐</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助中心</h4>
+        <ul>
+          <li><a href="#guide">使用指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#safety">安全提示</a></li>
+          <li><a href="#hot">热门推荐</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="#">网站介绍</a></li>
+          <li><a href="#">收录标准</a></li>
+          <li><a href="#">提交站点</a></li>
+          <li><a href="#">联系方式</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 91网 · 综合网络资源导航平台 · 本站仅提供链接索引，不存储任何第三方内容</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-item');
+  for (var i = 0; i < items.length; i++) {
+    (function (item) {
+      var btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        for (var j = 0; j < items.length; j++) {
+          items[j].classList.remove('open');
+        }
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    })(items[i]);
+  }
+})();
+</script>
+
+</body>
+          </html>
