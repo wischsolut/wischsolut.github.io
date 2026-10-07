@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悟空浏览器-轻快省流的多功能手机浏览工具使用指南</title>
+<meta name="description" content="悟空浏览器是一款面向手机用户的浏览工具，本文介绍其轻快省流、多标签管理、视频与资讯聚合、隐私与安全设置等常见功能，并提供下载安装、使用技巧与常见问题解答。">
+<meta name="keywords" content="悟空浏览器,手机浏览器,轻快浏览器,省流浏览器,浏览工具,隐私安全">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --brand: #ff6a1f;
+  --brand-deep: #e04f05;
+  --brand-soft: #fff3ec;
+  --ink: #1f2329;
+  --ink-2: #4a5260;
+  --ink-3: #7b8494;
+  --line: #eceef2;
+  --bg: #f7f8fa;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(31, 35, 41, .07);
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 顶部 */
+.topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: 66px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #ff8a3d, #ff5c00);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 106, 31, .35);
+}
+.logo small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.nav a {
+  font-size: 15px;
+  color: var(--ink-2);
+  padding: 8px 14px;
+  border-radius: 9px;
+  transition: .2s;
+}
+.nav a:hover {
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #ff8a3d, #ff5c00);
+  color: #fff;
+  box-shadow: 0 5px 16px rgba(255, 92, 0, .3);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255, 92, 0, .38);
+}
+.btn-ghost {
+  background: #fff;
+  border-color: var(--line);
+  color: var(--ink-2);
+}
+.btn-ghost:hover {
+  border-color: var(--brand);
+  color: var(--brand-deep);
+}
+
+/* Hero */
+.hero {
+  background: radial-gradient(circle at 84% 12%, #ffe6d6 0%, rgba(255, 230, 214, 0) 52%),
+              linear-gradient(180deg, #fffaf6 0%, #f7f8fa 100%);
+  padding: 62px 0 54px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 46px;
+  align-items: center;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid #ffd9c2;
+  color: var(--brand-deep);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.25;
+  letter-spacing: -.5px;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--brand-deep);
+}
+.hero p.lead {
+  font-size: 16.5px;
+  color: var(--ink-2);
+  max-width: 560px;
+  margin-bottom: 26px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.hero-points {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.hero-points span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  flex: none;
+}
+
+/* 手机模型 */
+.phone {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 30px;
+  border: 8px solid #23262c;
+  box-shadow: 0 22px 50px rgba(31, 35, 41, .2);
+  overflow: hidden;
+}
+.phone-bar {
+  background: #f4f5f7;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.phone-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d8dbe1;
+  flex: none;
+}
+.phone-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--ink-3);
+  padding: 5px 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.phone-body {
+  padding: 14px;
+  background: #fff;
+}
+.phone-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.phone-card {
+  border-radius: 11px;
+  padding: 12px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  min-height: 62px;
+  display: flex;
+  align-items: flex-end;
+}
+.pc-1 { background: linear-gradient(135deg, #ff9a4d, #ff6a1f); }
+.pc-2 { background: linear-gradient(135deg, #6fa8ff, #3d7bff); }
+.pc-3 { background: linear-gradient(135deg, #57c98b, #2fae6a); }
+.pc-4 { background: linear-gradient(135deg, #b58cff, #8a5cff); }
+.phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.phone-line {
+  height: 9px;
+  border-radius: 5px;
+  background: #f0f1f4;
+}
+.phone-line.s1 { width: 88%; }
+.phone-line.s2 { width: 70%; }
+.phone-line.s3 { width: 80%; }
+
+/* 通用区块 */
+section {
+  padding: 58px 0;
+}
+.sec-head {
+  margin-bottom: 30px;
+}
+.sec-head .eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--brand-deep);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sec-head h2 {
+  font-size: 27px;
+  letter-spacing: -.3px;
+  margin-bottom: 10px;
+}
+.sec-head p {
+  color: var(--ink-2);
+  font-size: 15.5px;
+  max-width: 720px;
+}
+
+/* 功能卡片 */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: .22s;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: #ffd9c2;
+}
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.feature-card h3 {
+  font-size: 17px;
+  margin-bottom: 9px;
+}
+.feature-card p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+/* 使用场景 */
+.scene {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.scene-item {
+  border-left: 3px solid var(--brand);
+  padding: 4px 0 4px 18px;
+}
+.scene-item h3 {
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.scene-item p {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+/* 步骤 */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  counter-reset: step;
+}
+.step {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  position: relative;
+}
+.step::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffd9c2;
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+.step h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.step p {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+/* 技巧列表 + 侧栏 */
+.split {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 34px;
+  align-items: start;
+}
+.tips {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.tip {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+}
+.tip-no {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tip h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.tip p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.side-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 18px;
+}
+.side-card h3 {
+  font-size: 17px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.side-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.side-list li {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  padding-left: 20px;
+  position: relative;
+}
+.side-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: #ffd9c2;
+}
+.side-note {
+  background: var(--brand-soft);
+  border: 1px solid #ffe0cd;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  font-size: 14px;
+  color: var(--brand-deep);
+}
+.side-note strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* 安全提示 */
+.safe {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.safe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.safe-card {
+  border: 1px dashed #ffd0b3;
+  border-radius: var(--radius);
+  padding: 22px;
+  background: #fffdfb;
+}
+.safe-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--brand-deep);
+}
+.safe-card p {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+/* FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 18px 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-family: inherit;
+}
+.faq-q span.mark {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+}
+.faq-item.open .faq-q span.mark {
+  transform: rotate(45deg);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .28s ease;
+}
+.faq-a p {
+  padding: 0 22px 20px;
+  font-size: 14.8px;
+  color: var(--ink-2);
+}
+
+/* 页脚 */
+footer {
+  background: #1f2329;
+  color: #b9bfc9;
+  padding: 46px 0 26px;
+  font-size: 14px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #32373f;
+}
+.foot-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.foot-grid p {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #8d949f;
+}
+.foot-col h4 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+.foot-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.foot-col a {
+  font-size: 13.5px;
+  color: #8d949f;
+  transition: .2s;
+}
+.foot-col a:hover {
+  color: var(--brand);
+}
+.copy {
+  padding-top: 20px;
+  font-size: 13px;
+  color: #767d88;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 响应式 */
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .hero h1 { font-size: 32px; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .scene-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr; }
+  .safe-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .topbar-inner { height: auto; padding: 12px 0; flex-wrap: wrap; }
+  .nav { width: 100%; order: 3; overflow-x: auto; padding-bottom: 4px; }
+  .nav a { white-space: nowrap; padding: 7px 10px; font-size: 14px; }
+  .hero { padding: 40px 0; }
+  .hero h1 { font-size: 26px; }
+  section { padding: 42px 0; }
+  .sec-head h2 { font-size: 22px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .scene-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-actions .btn { flex: 1; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">
+      <div class="logo-mark">悟</div>
+      <div>
+        悟空浏览器
+        <small>轻快 · 省流 · 好用</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#features">核心功能</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#guide">上手步骤</a>
+      <a href="#tips">使用技巧</a>
+      <a href="#safe">安全隐私</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a href="#guide" class="btn btn-primary">查看使用指南</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-tag">手机浏览工具 · 使用说明</div>
+        <h1>悟空浏览器：把手机上网这件事，<em>做得更轻快一些</em></h1>
+        <p class="lead">
+          悟空浏览器是一款面向移动端的浏览工具，主打轻量、省流与信息聚合。它把网页浏览、多标签管理、视频与资讯入口以及隐私设置集中在同一个界面里，适合希望用一部手机完成日常查资料、看内容、找信息的用户。下面从功能、场景、上手方法到常见问题，逐项说明它到底能做什么、怎么用更顺手。
+        </p>
+        <div class="hero-actions">
+          <a href="#features" class="btn btn-primary">了解核心功能</a>
+          <a href="#guide" class="btn btn-ghost">快速上手步骤</a>
+        </div>
+        <div class="hero-points">
+          <span><i class="dot"></i>轻量启动</span>
+          <span><i class="dot"></i>省流模式</span>
+          <span><i class="dot"></i>多标签管理</span>
+          <span><i class="dot"></i>隐私设置</span>
+        </div>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone-bar">
+            <i></i><i></i><i></i>
+            <div class="phone-url">搜索或输入网址</div>
+          </div>
+          <div class="phone-body">
+            <div class="phone-cards">
+              <div class="phone-card pc-1">资讯</div>
+              <div class="phone-card pc-2">视频</div>
+              <div class="phone-card pc-3">搜索</div>
+              <div class="phone-card pc-4">书签</div>
+            </div>
+            <div class="phone-list">
+              <div class="phone-line s1"></div>
+              <div class="phone-line s2"></div>
+              <div class="phone-line s3"></div>
+              <div class="phone-line s2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心功能 -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Core Features</div>
+        <h2>悟空浏览器主要能做什么</h2>
+        <p>浏览器的价值不在于功能堆得多，而在于常用的事能不能一步完成。下面这些是它被用户日常使用最多的部分，也是判断是否适合自己的关键。</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">速</div>
+          <h3>轻量启动与快速打开</h3>
+          <p>启动后直接进入搜索与常用入口，减少中间层级。对配置一般的手机来说，打开网页、切换标签的等待感更短，适合碎片化使用。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">省</div>
+          <h3>省流与无图模式</h3>
+          <p>在移动网络下可开启省流或图片压缩策略，减少页面加载的数据量。看文字为主的资讯、查资料时，流量消耗更可控。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">签</div>
+          <h3>多标签与窗口管理</h3>
+          <p>支持同时打开多个页面，标签之间快速切换，并可把常用页面加入书签或收藏，避免反复输入网址。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">聚</div>
+          <h3>资讯与视频入口</h3>
+          <p>在浏览之外提供内容聚合入口，把热点资讯、短视频等集中呈现，减少在多个应用之间来回跳转的次数。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">隐</div>
+          <h3>隐私与清理设置</h3>
+          <p>提供无痕浏览、清除缓存与 Cookie、管理网站权限等选项，方便在共用设备或临时使用时保护个人浏览记录。</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">下</div>
+          <h3>文件下载与管理</h3>
+          <p>网页中的文件可直接下载并在浏览器内查看进度，下载记录集中管理，省去在文件管理器里反复翻找的麻烦。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用场景 -->
+  <section class="scene" id="scenes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Scenarios</div>
+        <h2>哪些情况下更值得用它</h2>
+        <p>不同的人用浏览器的方式差别很大。下面几类场景，是悟空浏览器相对更能发挥优势的地方。</p>
+      </div>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <h3>日常查资料</h3>
+          <p>搜索关键词、打开多个结果页对照阅读，再用书签把有用的页面存下来，形成自己的资料入口。</p>
+        </div>
+        <div class="scene-item">
+          <h3>通勤碎片阅读</h3>
+          <p>在移动网络下开启省流模式，浏览资讯类页面时加载更快，也减少流量压力。</p>
+        </div>
+        <div class="scene-item">
+          <h3>临时借用设备</h3>
+          <p>用无痕模式浏览，结束后清除记录，避免在他人手机上留下个人搜索与访问痕迹。</p>
+        </div>
+        <div class="scene-item">
+          <h3>网页文件获取</h3>
+          <p>需要从网页下载文档、图片或安装包时，直接在浏览器内完成下载并查看进度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 上手步骤 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Getting Started</div>
+        <h2>从安装到顺手使用的四个步骤</h2>
+        <p>浏览器的上手成本通常很低，但要真正用得舒服，还是有几个设置值得一开始就调整好。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>获取并安装</h3>
+          <p>请通过手机自带应用商店或官方渠道搜索获取，安装前留意应用名称、开发者信息与所需权限，避免从来源不明的页面下载。</p>
+        </div>
+        <div class="step">
+          <h3>完成基础设置</h3>
+          <p>首次打开时按提示设置默认搜索引擎、是否允许通知、是否开启省流，这几项会直接影响后续的使用体验。</p>
+        </div>
+        <div class="step">
+          <h3>建立常用入口</h3>
+          <p>把常访问的网站添加到首页快捷方式或书签栏，把高频操作放在一屏之内，减少每次都要输入网址的重复动作。</p>
+        </div>
+        <div class="step">
+          <h3>调整隐私选项</h3>
+          <p>根据需要在设置中管理 Cookie、位置、摄像头等网站权限，并养成定期清理缓存与浏览记录的习惯。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技巧 + 侧栏 -->
+  <section id="tips">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Tips</div>
+        <h2>让浏览更顺手的实用技巧</h2>
+        <p>这些做法不复杂，但长期坚持下来能明显减少重复操作，也能让手机运行得更轻快。</p>
+      </div>
+      <div class="split">
+        <div class="tips">
+          <div class="tip">
+            <div class="tip-no">1</div>
+            <div>
+              <h3>按网络环境切换省流策略</h3>
+              <p>在移动数据下开启省流或图片压缩，在 Wi-Fi 环境下关闭，兼顾速度与页面完整度，不必一直用同一种模式。</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-no">2</div>
+            <div>
+              <h3>用标签分组代替反复搜索</h3>
+              <p>把同一主题的页面放在一起打开，对照阅读后再统一关闭，比来回搜索、反复跳转更省时间。</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-no">3</div>
+            <div>
+              <h3>定期清理缓存与 Cookie</h3>
+              <p>缓存过多会占用存储空间，也可能导致部分页面显示异常。建议每隔一段时间清理一次，保留书签即可。</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-no">4</div>
+            <div>
+              <h3>谨慎授予网站权限</h3>
+              <p>位置、麦克风、摄像头、通知等权限建议按需开启。遇到与页面功能无关的权限请求，可以直接拒绝。</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-no">5</div>
+            <div>
+              <h3>把高频网站固定到首页</h3>
+              <p>固定入口能减少输入和搜索次数，尤其适合需要每天查看的资讯、工具类网站。</p>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="side-card">
+            <h3>适合人群</h3>
+            <ul class="side-list">
+              <li>希望浏览器启动快、占用低的用户</li>
+              <li>经常在移动网络下浏览网页的用户</li>
+              <li>需要同时打开多个页面对照阅读的用户</li>
+              <li>对浏览记录和隐私设置比较在意的用户</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>使用前建议确认</h3>
+            <ul class="side-list">
+              <li>安装来源是否可靠</li>
+              <li>申请的系统权限是否合理</li>
+              <li>默认搜索引擎是否符合习惯</li>
+              <li>是否需要开启通知推送</li>
+            </ul>
+          </div>
+          <div class="side-note">
+            <strong>一点提醒</strong>
+            浏览器只是工具，浏览内容的安全与否更多取决于访问的网站本身。遇到要求输入账号密码、支付信息的陌生页面，建议先核实来源。
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安全隐私 -->
+  <section class="safe" id="safe">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Privacy &amp; Safety</div>
+        <h2>使用浏览器时的隐私与安全注意点</h2>
+        <p>浏览器是手机上访问外部内容最频繁的入口之一，一些基本习惯能减少不必要的风险。</p>
+      </div>
+      <div class="safe-grid">
+        <div class="safe-card">
+          <h3>安装来源要可靠</h3>
+          <p>优先选择手机应用商店或官方渠道获取安装包。对来源不明的下载链接、二维码保持谨慎，避免安装到被篡改的版本。</p>
+        </div>
+        <div class="safe-card">
+          <h3>权限按需开启</h3>
+          <p>位置、通讯录、短信等与浏览功能关系不大的权限，可以关闭。网站层面的权限请求同样建议逐项确认。</p>
+        </div>
+        <div class="safe-card">
+          <h3>敏感操作留个心眼</h3>
+          <p>在公共 Wi-Fi 环境下尽量避免进行支付、登录重要账号等操作；确认网址与页面内容是否一致，再输入个人信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>常见问题解答</h2>
+        <p>下面这些问题在初次使用浏览工具时出现频率较高，先看一遍可以少走一些弯路。</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" type="button">悟空浏览器主要适合哪类用户？<span class="mark">+</span></button>
+          <div class="faq-a"><p>它更适合把手机作为主要上网设备、希望浏览过程轻快省流、并且需要同时处理多个网页的用户。如果只是偶尔查一次信息，系统自带浏览器也基本够用，是否更换取决于你对速度和内容聚合的需求程度。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">省流模式会影响页面显示吗？<span class="mark">+</span></button>
+          <div class="faq-a"><p>省流模式通常通过压缩图片、延迟加载非必要资源来减少数据量，因此部分页面的图片清晰度或加载顺序可能与完整模式不同。看文字内容时影响不大，如果需要查看高清图片或完整排版，可以临时关闭。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">无痕浏览能完全隐藏记录吗？<span class="mark">+</span></button>
+          <div class="faq-a"><p>无痕模式主要作用是让本地设备不保留本次浏览历史、Cookie 等记录，但它并不能隐藏网络层面的访问信息，也无法阻止所访问网站自身记录你的访问。它适合临时借用设备时使用，不等同于匿名上网。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">浏览器用久了变卡怎么办？<span class="mark">+</span></button>
+          <div class="faq-a"><p>可以先清理缓存和 Cookie，关闭长期不用的标签页，检查是否有过多网站在后台请求通知。如果仍然卡顿，可尝试更新到较新版本，或重启手机释放内存。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">书签和收藏会丢失吗？<span class="mark">+</span></button>
+          <div class="faq-a"><p>如果浏览器提供账号同步功能，登录后书签通常可以跨设备同步；未登录时数据一般保存在本地，清除应用数据或卸载重装可能导致丢失。重要网址建议额外备份一份。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">网页打不开或显示异常怎么办？<span class="mark">+</span></button>
+          <div class="faq-a"><p>可以先检查网络连接是否正常，再尝试切换网络、清理缓存或更换浏览器内核模式。如果只有个别网站异常，也可能是该网站自身的问题，稍后再试或换其他设备验证。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <div class="logo-mark">悟</div>
+          悟空浏览器
+        </div>
+        <p>本页面为悟空浏览器相关内容介绍与使用说明，围绕功能、场景、操作步骤与常见问题进行整理，帮助用户在了解清楚之后再决定是否使用。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#features">核心功能</a></li>
+          <li><a href="#scenes">使用场景</a></li>
+          <li><a href="#guide">上手步骤</a></li>
+          <li><a href="#tips">使用技巧</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>相关说明</h4>
+        <ul>
+          <li><a href="#safe">隐私与安全</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#features">省流模式</a></li>
+          <li><a href="#features">标签管理</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>使用建议</h4>
+        <ul>
+          <li><a href="#guide">从正规渠道获取</a></li>
+          <li><a href="#safe">按需授予权限</a></li>
+          <li><a href="#tips">定期清理缓存</a></li>
+          <li><a href="#faq">及时更新版本</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>悟空浏览器 · 内容介绍与使用指南</span>
+      <span>页面内容仅供了解与参考，具体功能以实际版本为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-a');
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      items.forEach(function (other) {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
