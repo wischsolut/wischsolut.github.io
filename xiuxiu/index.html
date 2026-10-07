@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羞羞 漫画-热门漫画推荐与在线阅读指南</title>
+<meta name="description" content="羞羞 漫画首页，整理热门漫画分类、最新更新、人气榜单与在线阅读指南，帮助读者快速找到适合自己口味的漫画内容，了解题材选择与阅读注意事项。">
+<meta name="keywords" content="羞羞 漫画,羞羞漫画,漫画首页,热门漫画,在线阅读,漫画推荐,漫画分类">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --bg:#0f0d1a;
+  --bg-soft:#171428;
+  --card:#1e1a33;
+  --card-hover:#272140;
+  --line:#2e2748;
+  --pink:#ff5c8a;
+  --pink-soft:#ff8fb1;
+  --purple:#8a6cff;
+  --text:#f2eefb;
+  --text-dim:#a79fc4;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+
+/* ============ 顶部栏 ============ */
+.topbar{
+  background:linear-gradient(90deg,#1b1630,#241b3f);
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+  color:var(--text-dim);
+}
+.topbar .wrap{
+  max-width:1200px;margin:0 auto;padding:8px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.topbar .tip{color:var(--pink-soft);}
+
+/* ============ 页眉 / 导航 ============ */
+header.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,13,26,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:.5px;
+}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  display:grid;place-items:center;font-size:19px;color:#fff;
+  box-shadow:0 6px 18px rgba(255,92,138,.35);
+}
+.logo span.hl{color:var(--pink);}
+nav.main-nav ul{display:flex;gap:6px;flex-wrap:wrap;}
+nav.main-nav a{
+  display:block;padding:8px 14px;border-radius:9px;font-size:15px;color:var(--text-dim);
+  transition:.2s;
+}
+nav.main-nav a:hover,nav.main-nav a.active{
+  background:var(--card);color:var(--text);
+}
+.search-box{
+  display:flex;align-items:center;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;
+}
+.search-box input{
+  background:transparent;border:none;outline:none;color:var(--text);
+  padding:9px 12px;font-size:14px;width:170px;
+}
+.search-box input::placeholder{color:#6f6790;}
+.search-box button{
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  border:none;color:#fff;padding:9px 16px;font-size:14px;cursor:pointer;font-weight:600;
+}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 12% -10%,rgba(255,92,138,.28),transparent 62%),
+    radial-gradient(760px 360px at 92% 6%,rgba(138,108,255,.26),transparent 60%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;padding:58px 20px 52px;
+  display:grid;grid-template-columns:1.25fr .95fr;gap:44px;align-items:center;
+}
+.hero h1{
+  font-size:40px;line-height:1.28;font-weight:800;letter-spacing:.5px;margin-bottom:16px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{
+  color:var(--text-dim);font-size:16.5px;max-width:620px;margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:11px;font-weight:700;font-size:15px;
+  transition:.22s;border:1px solid transparent;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;
+  box-shadow:0 10px 26px rgba(138,108,255,.32);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(255,92,138,.4);}
+.btn-ghost{
+  border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03);
+}
+.btn-ghost:hover{background:var(--card);border-color:var(--pink);}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;}
+.hero-tags span{
+  font-size:13px;color:var(--text-dim);border:1px dashed var(--line);
+  padding:5px 12px;border-radius:20px;
+}
+.hero-panel{
+  background:linear-gradient(160deg,var(--card),#1a1530);
+  border:1px solid var(--line);border-radius:20px;padding:24px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+.hero-panel h2{font-size:17px;margin-bottom:16px;color:var(--pink-soft);}
+.hero-panel .rank-item{
+  display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);
+}
+.hero-panel .rank-item:last-child{border-bottom:none;}
+.hero-panel .num{
+  width:26px;height:26px;flex:0 0 26px;border-radius:8px;display:grid;place-items:center;
+  font-size:13px;font-weight:700;background:#2a2345;color:var(--text-dim);
+}
+.hero-panel .rank-item:nth-child(2) .num{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;}
+.hero-panel .rank-item:nth-child(3) .num{background:#3a2f5f;color:#ffd0de;}
+.hero-panel .meta{flex:1;min-width:0;}
+.hero-panel .meta b{display:block;font-size:14.5px;font-weight:600;}
+.hero-panel .meta small{color:var(--text-dim);font-size:12.5px;}
+.hero-panel .hot{font-size:12.5px;color:var(--pink-soft);white-space:nowrap;}
+
+/* ============ 通用区块 ============ */
+.section{max-width:1200px;margin:0 auto;padding:56px 20px;}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+  margin-bottom:26px;flex-wrap:wrap;
+}
+.section-head h2{
+  font-size:25px;font-weight:800;position:relative;padding-left:15px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;border-radius:4px;
+  background:linear-gradient(180deg,var(--pink),var(--purple));
+}
+.section-head p{color:var(--text-dim);font-size:14.5px;max-width:640px;}
+.section-head .more{color:var(--pink-soft);font-size:14px;white-space:nowrap;}
+.section-head .more:hover{text-decoration:underline;}
+
+/* ============ 分类 ============ */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px;
+}
+.cat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 16px;transition:.22s;
+}
+.cat-card:hover{
+  background:var(--card-hover);border-color:var(--pink);transform:translateY(-3px);
+}
+.cat-card .icon{
+  width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+  font-size:19px;margin-bottom:12px;
+  background:linear-gradient(135deg,rgba(255,92,138,.22),rgba(138,108,255,.22));
+}
+.cat-card h3{font-size:16px;margin-bottom:6px;}
+.cat-card p{font-size:13px;color:var(--text-dim);line-height:1.6;}
+
+/* ============ 漫画卡片 ============ */
+.comic-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px;
+}
+.comic-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.22s;display:flex;flex-direction:column;
+}
+.comic-card:hover{transform:translateY(-4px);border-color:var(--purple);box-shadow:0 16px 36px rgba(0,0,0,.4);}
+.cover{
+  height:132px;display:grid;place-items:center;font-size:30px;font-weight:800;color:rgba(255,255,255,.9);
+  letter-spacing:2px;
+}
+.c1{background:linear-gradient(135deg,#ff5c8a,#8a6cff);}
+.c2{background:linear-gradient(135deg,#5c8aff,#8a6cff);}
+.c3{background:linear-gradient(135deg,#ff8f5c,#ff5c8a);}
+.c4{background:linear-gradient(135deg,#6cffc4,#5c8aff);}
+.c5{background:linear-gradient(135deg,#c45cff,#ff5c8a);}
+.c6{background:linear-gradient(135deg,#ffb35c,#c45cff);}
+.comic-body{padding:14px 15px 16px;flex:1;display:flex;flex-direction:column;}
+.comic-body h3{font-size:16px;margin-bottom:6px;}
+.comic-body p{font-size:13px;color:var(--text-dim);flex:1;line-height:1.62;}
+.comic-foot{
+  display:flex;justify-content:space-between;align-items:center;margin-top:12px;
+  font-size:12.5px;color:#7d75a0;
+}
+.badge{
+  display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+  background:rgba(255,92,138,.16);color:var(--pink-soft);border:1px solid rgba(255,92,138,.3);
+}
+
+/* ============ 更新列表 ============ */
+.update-list{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.update-row{
+  display:grid;grid-template-columns:1fr 150px 110px 96px;gap:14px;align-items:center;
+  padding:14px 20px;border-bottom:1px solid var(--line);font-size:14.5px;transition:.18s;
+}
+.update-row:last-child{border-bottom:none;}
+.update-row:hover{background:var(--card);}
+.update-row .t{font-weight:600;}
+.update-row .t small{display:block;font-weight:400;color:var(--text-dim);font-size:12.5px;margin-top:2px;}
+.update-row .cate{color:var(--text-dim);font-size:13.5px;}
+.update-row .time{color:#7d75a0;font-size:13px;}
+.update-row .go{
+  justify-self:end;font-size:13px;color:var(--pink-soft);
+}
+
+/* ============ 指南 ============ */
+.guide-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start;}
+.guide-main article{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;margin-bottom:18px;
+}
+.guide-main article h3{
+  font-size:18px;margin-bottom:12px;color:var(--text);
+  display:flex;align-items:center;gap:9px;
+}
+.guide-main article h3 .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--pink);flex:0 0 9px;
+}
+.guide-main article p{color:var(--text-dim);font-size:14.8px;margin-bottom:10px;}
+.guide-main article p:last-child{margin-bottom:0;}
+.guide-main article ul{margin:6px 0 0 2px;}
+.guide-main article ul li{
+  color:var(--text-dim);font-size:14.6px;padding-left:18px;position:relative;margin-bottom:7px;
+}
+.guide-main article ul li::before{
+  content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;
+  background:var(--purple);
+}
+.aside-card{
+  background:linear-gradient(160deg,var(--card),#1a1530);
+  border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px;
+}
+.aside-card h3{font-size:16.5px;margin-bottom:14px;color:var(--pink-soft);}
+.aside-card ol{counter-reset:rn;}
+.aside-card ol li{
+  counter-increment:rn;display:flex;gap:11px;padding:9px 0;border-bottom:1px dashed var(--line);
+  font-size:14.4px;color:var(--text-dim);
+}
+.aside-card ol li:last-child{border-bottom:none;}
+.aside-card ol li::before{
+  content:counter(rn);flex:0 0 22px;height:22px;border-radius:7px;display:grid;place-items:center;
+  background:#2a2345;color:var(--pink-soft);font-size:12.5px;font-weight:700;
+}
+.aside-card .note{
+  font-size:13.6px;color:var(--text-dim);line-height:1.75;
+  border-left:3px solid var(--purple);padding-left:12px;
+}
+
+/* ============ FAQ ============ */
+.faq-list{display:grid;gap:12px;}
+.faq-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;
+}
+.faq-item h3{font-size:16px;margin-bottom:8px;color:var(--text);}
+.faq-item p{font-size:14.6px;color:var(--text-dim);}
+
+/* ============ 页脚 ============ */
+footer.site-footer{
+  background:#0b0914;border-top:1px solid var(--line);margin-top:20px;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;padding:44px 20px 26px;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;
+}
+.footer-inner h4{font-size:15px;margin-bottom:14px;color:var(--text);}
+.footer-inner p,.footer-inner li{font-size:13.6px;color:#8d85ab;line-height:1.9;}
+.footer-inner ul li a:hover{color:var(--pink-soft);}
+.footer-bottom{
+  border-top:1px solid var(--line);text-align:center;padding:18px 20px;
+  font-size:13px;color:#6f6790;
+}
+
+/* ============ 响应式 ============ */
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding-top:44px;}
+  .hero h1{font-size:33px;}
+  .guide-wrap{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .update-row{grid-template-columns:1fr 120px 90px;}
+  .update-row .time{display:none;}
+}
+@media (max-width:640px){
+  .header-inner{padding:12px 16px;gap:12px;}
+  .search-box input{width:120px;}
+  nav.main-nav{order:3;width:100%;}
+  nav.main-nav ul{gap:4px;}
+  nav.main-nav a{padding:7px 11px;font-size:14px;}
+  .hero h1{font-size:27px;}
+  .hero p.lead{font-size:15px;}
+  .section{padding:40px 16px;}
+  .section-head h2{font-size:21px;}
+  .comic-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:13px;}
+  .cover{height:108px;font-size:24px;}
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
+  .update-row{grid-template-columns:1fr 84px;padding:13px 15px;font-size:14px;}
+  .update-row .cate{display:none;}
+  .footer-inner{grid-template-columns:1fr;padding:34px 16px 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>本站为漫画内容导航与阅读指引页面，所有作品信息仅供浏览参考。</span>
+    <span class="tip">建议在稳定网络环境下阅读，合理安排时间</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top">
+      <span class="mark">羞</span>
+      <span>羞羞<span class="hl">漫画</span></span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a class="active" href="#top">首页</a></li>
+        <li><a href="#category">题材分类</a></li>
+        <li><a href="#hot">热门推荐</a></li>
+        <li><a href="#update">更新动态</a></li>
+        <li><a href="#guide">阅读指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <form class="search-box" onsubmit="return false;">
+      <input type="text" placeholder="搜索漫画名 / 题材" aria-label="搜索漫画">
+      <button type="button">搜索</button>
+    </form>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>羞羞 漫画首页<br><em>找对题材，读得更顺</em></h1>
+        <p class="lead">
+          面对数量庞大的漫画作品，读者最常遇到的困扰不是“没得看”，而是“不知道从哪一本开始”。
+          本页把题材分类、热门方向、更新节奏和挑选方法整理成一张清晰的入口地图，
+          帮助你在有限的空闲时间里，更快锁定符合自己口味的作品。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">查看热门方向</a>
+          <a class="btn btn-ghost" href="#guide">阅读挑选指南</a>
+        </div>
+        <div class="hero-tags">
+          <span>恋爱日常</span>
+          <span>都市情感</span>
+          <span>校园青春</span>
+          <span>奇幻冒险</span>
+          <span>治愈轻松</span>
+          <span>悬疑推理</span>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>本周关注方向</h2>
+        <div class="rank-item">
+          <span class="num">1</span>
+          <div class="meta"><b>都市情感线</b><small>节奏紧凑、代入感强</small></div>
+          <span class="hot">高热度</span>
+        </div>
+        <div class="rank-item">
+          <span class="num">2</span>
+          <div class="meta"><b>校园青春向</b><small>轻松明快、篇幅友好</small></div>
+          <span class="hot">稳定</span>
+        </div>
+        <div class="rank-item">
+          <span class="num">3</span>
+          <div class="meta"><b>奇幻冒险类</b><small>世界观完整、追更感强</small></div>
+          <span class="hot">上升</span>
+        </div>
+        <div class="rank-item">
+          <span class="num">4</span>
+          <div class="meta"><b>治愈日常向</b><small>单话独立、随时可读</small></div>
+          <span class="hot">稳定</span>
+        </div>
+        <div class="rank-item">
+          <span class="num">5</span>
+          <div class="meta"><b>悬疑推理类</b><small>信息密度高、适合连读</small></div>
+          <span class="hot">上升</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 题材分类 -->
+  <section class="section" id="category">
+    <div class="section-head">
+      <div>
+        <h2>按题材找作品</h2>
+        <p>先确定自己想看什么情绪，再选作品，比盲目翻榜单更省时间。以下分类按常见阅读需求划分。</p>
+      </div>
+      <a class="more" href="#hot">继续看热门 →</a>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="icon">💗</div>
+        <h3>恋爱日常</h3>
+        <p>以人物关系推进为主线，节奏温和，适合碎片时间阅读。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">🏙️</div>
+        <h3>都市情感</h3>
+        <p>背景贴近现实生活，常围绕职场、家庭与成长展开。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">🎒</div>
+        <h3>校园青春</h3>
+        <p>篇幅通常较短，情节明快，入门门槛低。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">🐉</div>
+        <h3>奇幻冒险</h3>
+        <p>设定完整、线索较多，适合愿意连续追更的读者。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">🌿</div>
+        <h3>治愈轻松</h3>
+        <p>单话结构为主，情绪负担小，适合睡前放松。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">🔍</div>
+        <h3>悬疑推理</h3>
+        <p>重视伏笔与反转，建议按顺序阅读以免遗漏线索。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">⚔️</div>
+        <h3>热血战斗</h3>
+        <p>以成长与对抗为核心，画面表现力通常较强。</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">😂</div>
+        <h3>搞笑轻松</h3>
+        <p>桥段密集、可跳读，适合短时间获得放松感。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐 -->
+  <section class="section" id="hot">
+    <div class="section-head">
+      <div>
+        <h2>热门方向推荐</h2>
+        <p>以下为按题材方向整理的阅读参考，不涉及具体作品排名与数据，仅用于帮助你判断方向是否合适。</p>
+      </div>
+      <a class="more" href="#update">看更新动态 →</a>
+    </div>
+    <div class="comic-grid">
+      <article class="comic-card">
+        <div class="cover c1">恋爱</div>
+        <div class="comic-body">
+          <h3>恋爱日常方向</h3>
+          <p>人物关系清晰，单话信息量适中，适合通勤或午休时读一两话。</p>
+          <div class="comic-foot"><span class="badge">轻松</span><span>适合入门</span></div>
+        </div>
+      </article>
+      <article class="comic-card">
+        <div class="cover c2">都市</div>
+        <div class="comic-body">
+          <h3>都市情感方向</h3>
+          <p>贴近现实语境，情绪起伏较明显，建议连续阅读以保持代入感。</p>
+          <div class="comic-foot"><span class="badge">代入感</span><span>连读佳</span></div>
+        </div>
+      </article>
+      <article class="comic-card">
+        <div class="cover c3">校园</div>
+        <div class="comic-body">
+          <h3>校园青春方向</h3>
+          <p>篇幅通常较短，节奏明快，对阅读时间要求不高。</p>
+          <div class="comic-foot"><span class="badge">短篇</span><span>节奏快</span></div>
+        </div>
+      </article>
+      <article class="comic-card">
+        <div class="cover c4">治愈</div>
+        <div class="comic-body">
+          <h3>治愈日常方向</h3>
+          <p>单话独立成篇，跳读也不影响理解，适合睡前放松。</p>
+          <div class="comic-foot"><span class="badge">放松</span><span>可跳读</span></div>
+        </div>
+      </article>
+      <article class="comic-card">
+        <div class="cover c5">奇幻</div>
+        <div class="comic-body">
+          <h3>奇幻冒险方向</h3>
+          <p>世界观与设定较多，前期需要耐心，进入主线后追更感强。</p>
+          <div class="comic-foot"><span class="badge">长线</span><span>需耐心</span></div>
+        </div>
+      </article>
+      <article class="comic-card">
+        <div class="cover c6">悬疑</div>
+        <div class="comic-body">
+          <h3>悬疑推理方向</h3>
+          <p>伏笔密度高，建议按顺序阅读，避免因跳读错过关键线索。</p>
+          <div class="comic-foot"><span class="badge">烧脑</span><span>按序读</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 更新动态 -->
+  <section class="section" id="update">
+    <div class="section-head">
+      <div>
+        <h2>更新与追更节奏</h2>
+        <p>不同作品的更新频率差异较大，先了解节奏，再决定是否追更，能有效减少等待焦虑。</p>
+      </div>
+    </div>
+    <div class="update-list">
+      <div class="update-row">
+        <div class="t">周更型作品<small>固定周期更新，适合规划阅读时间</small></div>
+        <div class="cate">恋爱 / 都市</div>
+        <div class="time">每周固定</div>
+        <div class="go">适合追更</div>
+      </div>
+      <div class="update-row">
+        <div class="t">双周更型作品<small>单话内容通常更充实，等待期较长</small></div>
+        <div class="cate">奇幻 / 悬疑</div>
+        <div class="time">两周一次</div>
+        <div class="go">建议攒读</div>
+      </div>
+      <div class="update-row">
+        <div class="t">不定期更新作品<small>更新间隔不固定，建议先看已完结部分</small></div>
+        <div class="cate">治愈 / 短篇</div>
+        <div class="time">不定期</div>
+        <div class="go">随缘阅读</div>
+      </div>
+      <div class="update-row">
+        <div class="t">已完结作品<small>可一次性读完，适合不喜欢等待的读者</small></div>
+        <div class="cate">全题材</div>
+        <div class="time">已完结</div>
+        <div class="go">一次读完</div>
+      </div>
+      <div class="update-row">
+        <div class="t">单元剧结构作品<small>每话独立，顺序影响不大，灵活度高</small></div>
+        <div class="cate">搞笑 / 日常</div>
+        <div class="time">灵活</div>
+        <div class="go">随时可读</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读指南 -->
+  <section class="section" id="guide">
+    <div class="section-head">
+      <div>
+        <h2>在线阅读挑选指南</h2>
+        <p>从题材、篇幅、更新节奏到阅读环境，几个实用角度帮你减少试错成本。</p>
+      </div>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-main">
+        <article>
+          <h3><span class="dot"></span>先看题材，再看篇幅</h3>
+          <p>很多读者会直接翻榜单，但榜单热度并不等于适合自己。更有效的做法是先确定想获得的情绪：放松、紧张、感动还是好奇，再对应到题材分类里筛选。</p>
+          <p>确定题材后，再看作品是长篇连载还是短篇单元剧。长篇适合愿意持续投入时间的读者，短篇则更灵活，随时可以停下。</p>
+        </article>
+        <article>
+          <h3><span class="dot"></span>关注更新节奏，避免等待焦虑</h3>
+          <p>周更、双周更与不定期更新的阅读体验差别很大。如果你习惯一口气读完，优先选择已完结或单元剧结构的作品；如果享受追更讨论的乐趣，周更作品会更合适。</p>
+          <ul>
+            <li>时间零散：优先单元剧或短篇作品</li>
+            <li>喜欢沉浸：选择世界观完整的长篇连载</li>
+            <li>不想等待：直接看已完结作品</li>
+          </ul>
+        </article>
+        <article>
+          <h3><span class="dot"></span>阅读环境与用眼习惯</h3>
+          <p>漫画阅读通常需要长时间注视屏幕，建议在光线稳定的环境下阅读，并适当调整屏幕亮度与字号，避免在移动的交通工具上长时间连续阅读。</p>
+          <p>如果发现阅读时频繁需要放大缩小，说明当前排版或设备设置不太合适，可以尝试更换阅读设备或调整显示比例。</p>
+        </article>
+        <article>
+          <h3><span class="dot"></span>合理安排阅读时间</h3>
+          <p>追更容易形成“再看一话就停”的循环，建议提前设定阅读时长，或把阅读安排在固定的休息时段，避免影响正常作息与工作学习。</p>
+          <p>对于情节紧张、信息密度高的作品，适当分段阅读反而更容易记住线索，阅读体验也更好。</p>
+        </article>
+      </div>
+      <aside>
+        <div class="aside-card">
+          <h3>挑选顺序建议</h3>
+          <ol>
+            <li>明确想获得的情绪</li>
+            <li>匹配对应题材分类</li>
+            <li>确认篇幅与更新状态</li>
+            <li>试读前几话判断画风</li>
+            <li>再决定是否长期追更</li>
+          </ol>
+        </div>
+        <div class="aside-card">
+          <h3>阅读提醒</h3>
+          <p class="note">
+            本页仅提供题材方向与阅读方法层面的整理，不提供具体作品下载或资源存储。
+            请通过正规、合规的渠道阅读内容，并注意保护个人账号与设备安全。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <div>
+        <h2>常见问题</h2>
+        <p>关于题材选择、阅读节奏与浏览体验的常见疑问整理。</p>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>不知道从哪种题材开始，怎么办？</h3>
+        <p>可以先回想最近让自己印象深刻的影视或小说类型，再对应到相近的漫画题材。如果完全没有方向，从治愈日常或校园青春这类节奏轻快的方向入手，试错成本通常更低。</p>
+      </div>
+      <div class="faq-item">
+        <h3>追更和攒着读，哪种更好？</h3>
+        <p>两者没有绝对优劣。追更能参与讨论、保持新鲜感；攒读则能获得更连贯的剧情体验。如果作品伏笔较多，攒读往往更容易理清线索。</p>
+      </div>
+      <div class="faq-item">
+        <h3>阅读时页面显示不完整怎么办？</h3>
+        <p>可以尝试调整浏览器缩放比例、切换横竖屏，或更换阅读设备。如果问题持续存在，通常与网络加载或页面适配有关，可稍后再试。</p>
+      </div>
+      <div class="faq-item">
+        <h3>如何判断一部作品是否适合自己？</h3>
+        <p>最直接的方法是试读前几话，观察画风、叙事节奏和人物塑造是否符合自己的偏好。相比只看简介，试读能提供更真实的判断依据。</p>
+      </div>
+      <div class="faq-item">
+        <h3>长时间阅读需要注意什么？</h3>
+        <p>建议每隔一段时间让眼睛休息，保持环境光线柔和，并避免在睡前长时间连续阅读。合理安排阅读时长，比追求阅读数量更重要。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h4>羞羞漫画 · 阅读导航</h4>
+      <p>本页面围绕漫画题材分类、更新节奏与在线阅读方法进行整理，帮助读者更高效地找到适合自己的作品方向。</p>
+    </div>
+    <div>
+      <h4>内容导航</h4>
+      <ul>
+        <li><a href="#category">题材分类</a></li>
+        <li><a href="#hot">热门方向</a></li>
+        <li><a href="#update">更新动态</a></li>
+        <li><a href="#guide">阅读指南</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>阅读帮助</h4>
+      <ul>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#guide">挑选方法</a></li>
+        <li><a href="#top">返回首页</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>温馨提示</h4>
+      <p>请通过合规渠道阅读内容，注意用眼健康与作息安排，未成年人请在监护人指导下合理使用网络。</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    羞羞漫画首页 · 内容导航与阅读指引 · 页面信息仅供浏览参考
+  </div>
+</footer>
+
+<script>
+(function(){
+  var navLinks = document.querySelectorAll('nav.main-nav a');
+  navLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      navLinks.forEach(function(l){ l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
